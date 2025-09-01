@@ -1,0 +1,105 @@
+# GolangCI-Lint configuration for Go formatting and linting
+# This file configures comprehensive Go code quality checks
+
+run:
+  timeout: 5m
+  issues-exit-code: 1
+  tests: true
+  skip-dirs:
+    - vendor
+    - docs
+    - .github
+  skip-files:
+    - ".*_test.go"
+
+output:
+  format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true
+
+linters:
+  enable:
+    - gofmt        # Format Go code
+    - goimports    # Organize imports
+    - govet        # Go vet tool
+    - errcheck     # Check for unchecked errors
+    - staticcheck  # Advanced static analysis
+    - unused       # Find unused code
+    - gosimple     # Simplify Go code
+    - ineffassign  # Detect ineffectual assignments
+    - typecheck    # Type checking
+    - misspell     # Check for misspelled words
+    - gocritic     # Go code review comments
+    - revive       # Fast, configurable, extensible, flexible linter
+    - gosec        # Security issues
+    - unconvert    # Remove unnecessary type conversions
+
+linters-settings:
+  gofmt:
+    simplify: true
+  
+  goimports:
+    local-prefixes: github.com/mdimamhosen/ecom-go
+  
+  govet:
+    check-shadowing: true
+    enable-all: true
+  
+  revive:
+    min-confidence: 0.8
+    rules:
+      - name: var-declaration
+      - name: package-comments
+      - name: range-loop-closure
+      - name: go-conventions
+      - name: error-return
+      - name: blank-imports
+      - name: context-as-argument
+      - name: dot-imports
+      - name: error-strings
+      - name: error-naming
+      - name: exported
+      - name: if-return
+      - name: increment-decrement
+      - name: var-naming
+      - name: package-comments
+      - name: range
+      - name: receiver-naming
+      - name: time-naming
+      - name: unexported-return
+      - name: indent-error-flow
+      - name: errorf
+
+  gocritic:
+    enabled-tags:
+      - performance
+      - style
+      - experimental
+      - diagnostic
+    disabled-checks:
+      - wrapperFunc
+      - dupImport
+
+  gosec:
+    excludes:
+      - G104 # Audit errors not checked
+
+issues:
+  exclude-rules:
+    # Exclude some linters from running on tests files
+    - path: _test\.go
+      linters:
+        - gosec
+        - gocritic
+    
+    # Exclude known linter issues
+    - linters:
+        - govet
+      text: "shadow: declaration of"
+    
+    - linters:
+        - revive
+      text: "package-comments"
+
+  max-issues-per-linter: 50
+  max-same-issues: 3

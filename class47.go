@@ -13,11 +13,11 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 type TProduct struct {
-	ID          int
-	TITLE       string
-	DESCRIPTION string
-	PRICE       float64
-	ImgUrl      string
+	ID          int     `json:"id"`
+	TITLE       string  `json:"title"`
+	DESCRIPTION string  `json:"description"`
+	PRICE       float64 `json:"price"`
+	ImgUrl      string  `json:"imgUrl"`
 }
 
 func getProducts(w http.ResponseWriter, r *http.Request) {

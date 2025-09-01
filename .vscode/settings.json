@@ -1,0 +1,54 @@
+{
+  "go.formatTool": "gofmt",
+  "go.useLanguageServer": true,
+  "go.lintTool": "golint",
+  "go.vetOnSave": "package",
+  "go.buildOnSave": "package",
+  "go.lintOnSave": "package",
+  "go.coverOnSave": false,
+  "go.coverageDecorator": {
+    "type": "highlight",
+    "coveredHighlightColor": "rgba(64,128,128,0.5)",
+    "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+    "coveredGutterStyle": "blockblue",
+    "uncoveredGutterStyle": "blockred"
+  },
+  "go.testFlags": ["-v"],
+  "go.testTimeout": "30s",
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.snippetSuggestions": "none",
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "go.gocodeAutoBuild": false,
+  "go.useCodeSnippetsOnFunctionSuggest": false,
+  "go.inferGopath": true,
+  "go.gopath": "",
+  "go.goroot": "",
+  "go.buildTags": "",
+  "go.testEnvVars": {},
+  "go.playground": {
+    "openbrowser": true,
+    "share": true,
+    "run": true
+  },
+  "files.eol": "\n",
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": true,
+  "editor.tabSize": 4,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120
+}

@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "golang.go",
+    "ms-vscode.vscode-json",
+    "streetsidesoftware.code-spell-checker",
+    "ms-vsliveshare.vsliveshare",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.makefile-tools",
+    "redhat.vscode-yaml",
+    "ms-vscode.remote-containers",
+    "github.vscode-pull-request-github",
+    "ms-vscode.vscode-git-graph"
+  ]
+}
