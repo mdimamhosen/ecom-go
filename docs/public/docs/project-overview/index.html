@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Project Overview
+  
+  #
+  
+
+This section provides a comprehensive overview of our Go HTTP Server project, including its architecture, goals, and implementation details.
+
+  Architecture
+  
+  #
+  
+
+The server is built using Go&rsquo;s standard library with the following key components:
+
+HTTP Router: http.NewServeMux() for request routing
+Handler Functions: Modular functions for each endpoint
+JSON Encoding: Built-in JSON marshaling for API responses
+In-Memory Storage: Simple slice-based data storage
+
+
+  Project Goals
+  
+  #
+  
+
+
+Learning: Demonstrate basic HTTP server concepts in Go
+Simplicity: Clean, readable code for educational purposes
+RESTful Design: Follow REST API conventions
+JSON API: Provide structured JSON responses
+CORS Support: Enable frontend integration
+
+
+  Technology Stack
+  
+  #
+  
+
+
+Language: Go (Golang)
+HTTP Server: Go standard library (net/http)
+Data Format: JSON
+Storage: In-memory (slice)
+Documentation: Hugo with Book theme
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://example.org/docs/project-overview/">
+  <meta property="og:site_name" content="Go HTTP Server Documentation">
+  <meta property="og:title" content="Project Overview">
+  <meta property="og:description" content="Project Overview # This section provides a comprehensive overview of our Go HTTP Server project, including its architecture, goals, and implementation details.
+Architecture # The server is built using Go’s standard library with the following key components:
+HTTP Router: http.NewServeMux() for request routing Handler Functions: Modular functions for each endpoint JSON Encoding: Built-in JSON marshaling for API responses In-Memory Storage: Simple slice-based data storage Project Goals # Learning: Demonstrate basic HTTP server concepts in Go Simplicity: Clean, readable code for educational purposes RESTful Design: Follow REST API conventions JSON API: Provide structured JSON responses CORS Support: Enable frontend integration Technology Stack # Language: Go (Golang) HTTP Server: Go standard library (net/http) Data Format: JSON Storage: In-memory (slice) Documentation: Hugo with Book theme">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Project Overview | Go HTTP Server Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://example.org/docs/project-overview/">
+<link rel="stylesheet" href="/book.min.5c80a20e1f11b0e9dc4cae70ce44083860ffa999a7bf8ab5dab38664fde8a418.css" integrity="sha256-XICiDh8RsOncTK5wzkQIOGD/qZmnv4q12rOGZP3opBg=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.fed636a450f6764ee477c3defae1a5bfa7de4e8659c436605679b401c8fa44b7.js" integrity="sha256-/tY2pFD2dk7kd8Pe&#43;uGlv6feToZZxDZgVnm0Acj6RLc=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://example.org/docs/project-overview/index.xml" title="Go HTTP Server Documentation" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Go HTTP Server Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/docs/"  target="_blank" rel="noopener">
+        Documentation
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/" class="active">Project Overview</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/intro/" class="">Introduction</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/api/reference/" class="">API Reference</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/" class="">Go Classes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/class47/" class="">class47</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Project Overview</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-overview">Project Overview</a>
+      <ul>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#project-goals">Project Goals</a></li>
+        <li><a href="#technology-stack">Technology Stack</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="project-overview">
+  Project Overview
+  
+  <a class="anchor" href="#project-overview">#</a>
+  
+</h1>
+<p>This section provides a comprehensive overview of our Go HTTP Server project, including its architecture, goals, and implementation details.</p>
+<h2 id="architecture">
+  Architecture
+  
+  <a class="anchor" href="#architecture">#</a>
+  
+</h2>
+<p>The server is built using Go&rsquo;s standard library with the following key components:</p>
+<ul>
+<li><strong>HTTP Router</strong>: <code>http.NewServeMux()</code> for request routing</li>
+<li><strong>Handler Functions</strong>: Modular functions for each endpoint</li>
+<li><strong>JSON Encoding</strong>: Built-in JSON marshaling for API responses</li>
+<li><strong>In-Memory Storage</strong>: Simple slice-based data storage</li>
+</ul>
+<h2 id="project-goals">
+  Project Goals
+  
+  <a class="anchor" href="#project-goals">#</a>
+  
+</h2>
+<ul>
+<li><strong>Learning</strong>: Demonstrate basic HTTP server concepts in Go</li>
+<li><strong>Simplicity</strong>: Clean, readable code for educational purposes</li>
+<li><strong>RESTful Design</strong>: Follow REST API conventions</li>
+<li><strong>JSON API</strong>: Provide structured JSON responses</li>
+<li><strong>CORS Support</strong>: Enable frontend integration</li>
+</ul>
+<h2 id="technology-stack">
+  Technology Stack
+  
+  <a class="anchor" href="#technology-stack">#</a>
+  
+</h2>
+<ul>
+<li><strong>Language</strong>: Go (Golang)</li>
+<li><strong>HTTP Server</strong>: Go standard library (<code>net/http</code>)</li>
+<li><strong>Data Format</strong>: JSON</li>
+<li><strong>Storage</strong>: In-memory (slice)</li>
+<li><strong>Documentation</strong>: Hugo with Book theme</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/project-overview/intro/" class="flex align-center book-icon">
+        <span>Introduction</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Introduction" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-overview">Project Overview</a>
+      <ul>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#project-goals">Project Goals</a></li>
+        <li><a href="#technology-stack">Technology Stack</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

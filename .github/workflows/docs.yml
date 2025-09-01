@@ -1,0 +1,112 @@
+name: Generate Documentation and Deploy
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '*.go'
+      - 'docs/**'
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+
+    - name: Install gomarkdoc
+      run: go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+
+    - name: Generate Go documentation
+      run: |
+        # Create API docs directory if it doesn't exist
+        mkdir -p docs/content/docs/api
+        
+        # Generate documentation for all Go files
+        echo "---" > docs/content/docs/api/generated.md
+        echo "title: \"Generated API Documentation\"" >> docs/content/docs/api/generated.md
+        echo "weight: 30" >> docs/content/docs/api/generated.md
+        echo "---" >> docs/content/docs/api/generated.md
+        echo "" >> docs/content/docs/api/generated.md
+        echo "# Auto-Generated API Documentation" >> docs/content/docs/api/generated.md
+        echo "" >> docs/content/docs/api/generated.md
+        
+        # Generate docs for each Go file
+        for gofile in *.go; do
+          if [ -f "$gofile" ]; then
+            echo "## Documentation for $gofile" >> docs/content/docs/api/generated.md
+            echo "" >> docs/content/docs/api/generated.md
+            echo '```go' >> docs/content/docs/api/generated.md
+            cat "$gofile" >> docs/content/docs/api/generated.md
+            echo '```' >> docs/content/docs/api/generated.md
+            echo "" >> docs/content/docs/api/generated.md
+          fi
+        done
+
+    - name: Create class index
+      run: |
+        # Create an index of all Go classes
+        echo "---" > docs/content/docs/classes.md
+        echo "title: \"Go Classes\"" >> docs/content/docs/classes.md
+        echo "weight: 25" >> docs/content/docs/classes.md
+        echo "---" >> docs/content/docs/classes.md
+        echo "" >> docs/content/docs/classes.md
+        echo "# Go Classes and Files" >> docs/content/docs/classes.md
+        echo "" >> docs/content/docs/classes.md
+        echo "This page lists all Go files in this project:" >> docs/content/docs/classes.md
+        echo "" >> docs/content/docs/classes.md
+        
+        for gofile in *.go; do
+          if [ -f "$gofile" ]; then
+            echo "- [$gofile]($gofile) - $(head -n 10 "$gofile" | grep -E '^//|^/\*' | head -n 1 | sed 's|^//||' | sed 's|^/\*||' | xargs || echo 'Go source file')" >> docs/content/docs/classes.md
+          fi
+        done
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Build Hugo site
+      run: |
+        cd docs
+        hugo --minify
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: './docs/public'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: generate-docs
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

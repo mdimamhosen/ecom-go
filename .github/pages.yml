@@ -1,0 +1,24 @@
+# GitHub Pages Configuration
+# This file ensures GitHub Pages works correctly with Hugo
+
+# Build settings
+source: docs
+destination: docs/public
+
+# Hugo-specific settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files from processing
+exclude:
+  - hugo.toml
+  - archetypes/
+  - assets/
+  - data/
+  - i18n/
+  - layouts/
+  - static/
+  - themes/
+  - config.yaml
+  - config.toml

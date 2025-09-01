@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Introduction to Go HTTP Server
+  
+  #
+  
+
+
+  What is this project?
+  
+  #
+  
+
+This is a simple HTTP server built in Go that demonstrates fundamental web development concepts. The server provides a RESTful API for managing product data with JSON responses.
+
+  Key Features
+  
+  #
+  
+
+
+  🌐 HTTP Server
+  
+  #
+  
+
+
+Built with Go&rsquo;s standard net/http package
+Custom router using http.NewServeMux()
+Runs on port 3000
+
+
+  📡 API Endpoints
+  
+  #
+  
+
+
+Home endpoint (/) - Welcome message
+Products endpoint (/products) - Product data in JSON format
+
+
+  🔧 Technical Implementation
+  
+  #
+  
+
+
+Type-safe structures - Custom TProduct struct
+JSON encoding - Automatic JSON marshaling
+Method validation - Only GET requests allowed for products
+CORS headers - Cross-origin resource sharing support
+Error handling - Proper HTTP status codes
+
+
+  Code Structure
+  
+  #
+  
+
+The entire server is implemented in a single file (class47.go) with:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://example.org/docs/project-overview/intro/">
+  <meta property="og:site_name" content="Go HTTP Server Documentation">
+  <meta property="og:title" content="Introduction">
+  <meta property="og:description" content="Introduction to Go HTTP Server # What is this project? # This is a simple HTTP server built in Go that demonstrates fundamental web development concepts. The server provides a RESTful API for managing product data with JSON responses.
+Key Features # 🌐 HTTP Server # Built with Go’s standard net/http package Custom router using http.NewServeMux() Runs on port 3000 📡 API Endpoints # Home endpoint (/) - Welcome message Products endpoint (/products) - Product data in JSON format 🔧 Technical Implementation # Type-safe structures - Custom TProduct struct JSON encoding - Automatic JSON marshaling Method validation - Only GET requests allowed for products CORS headers - Cross-origin resource sharing support Error handling - Proper HTTP status codes Code Structure # The entire server is implemented in a single file (class47.go) with:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2025-09-01T23:41:41+06:00">
+    <meta property="article:modified_time" content="2025-09-01T23:41:41+06:00">
+<title>Introduction | Go HTTP Server Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://example.org/docs/project-overview/intro/">
+<link rel="stylesheet" href="/book.min.5c80a20e1f11b0e9dc4cae70ce44083860ffa999a7bf8ab5dab38664fde8a418.css" integrity="sha256-XICiDh8RsOncTK5wzkQIOGD/qZmnv4q12rOGZP3opBg=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.fed636a450f6764ee477c3defae1a5bfa7de4e8659c436605679b401c8fa44b7.js" integrity="sha256-/tY2pFD2dk7kd8Pe&#43;uGlv6feToZZxDZgVnm0Acj6RLc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Go HTTP Server Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/docs/"  target="_blank" rel="noopener">
+        Documentation
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/" class="">Project Overview</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/intro/" class="active">Introduction</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/api/reference/" class="">API Reference</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/" class="">Go Classes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/class47/" class="">class47</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Introduction</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-go-http-server">Introduction to Go HTTP Server</a>
+      <ul>
+        <li><a href="#what-is-this-project">What is this project?</a></li>
+        <li><a href="#key-features">Key Features</a>
+          <ul>
+            <li><a href="#-http-server">🌐 HTTP Server</a></li>
+            <li><a href="#-api-endpoints">📡 API Endpoints</a></li>
+            <li><a href="#-technical-implementation">🔧 Technical Implementation</a></li>
+          </ul>
+        </li>
+        <li><a href="#code-structure">Code Structure</a></li>
+        <li><a href="#learning-objectives">Learning Objectives</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="introduction-to-go-http-server">
+  Introduction to Go HTTP Server
+  
+  <a class="anchor" href="#introduction-to-go-http-server">#</a>
+  
+</h1>
+<h2 id="what-is-this-project">
+  What is this project?
+  
+  <a class="anchor" href="#what-is-this-project">#</a>
+  
+</h2>
+<p>This is a simple HTTP server built in Go that demonstrates fundamental web development concepts. The server provides a RESTful API for managing product data with JSON responses.</p>
+<h2 id="key-features">
+  Key Features
+  
+  <a class="anchor" href="#key-features">#</a>
+  
+</h2>
+<h3 id="-http-server">
+  🌐 HTTP Server
+  
+  <a class="anchor" href="#-http-server">#</a>
+  
+</h3>
+<ul>
+<li>Built with Go&rsquo;s standard <code>net/http</code> package</li>
+<li>Custom router using <code>http.NewServeMux()</code></li>
+<li>Runs on port 3000</li>
+</ul>
+<h3 id="-api-endpoints">
+  📡 API Endpoints
+  
+  <a class="anchor" href="#-api-endpoints">#</a>
+  
+</h3>
+<ul>
+<li><strong>Home endpoint</strong> (<code>/</code>) - Welcome message</li>
+<li><strong>Products endpoint</strong> (<code>/products</code>) - Product data in JSON format</li>
+</ul>
+<h3 id="-technical-implementation">
+  🔧 Technical Implementation
+  
+  <a class="anchor" href="#-technical-implementation">#</a>
+  
+</h3>
+<ul>
+<li><strong>Type-safe structures</strong> - Custom <code>TProduct</code> struct</li>
+<li><strong>JSON encoding</strong> - Automatic JSON marshaling</li>
+<li><strong>Method validation</strong> - Only GET requests allowed for products</li>
+<li><strong>CORS headers</strong> - Cross-origin resource sharing support</li>
+<li><strong>Error handling</strong> - Proper HTTP status codes</li>
+</ul>
+<h2 id="code-structure">
+  Code Structure
+  
+  <a class="anchor" href="#code-structure">#</a>
+  
+</h2>
+<p>The entire server is implemented in a single file (<code>class47.go</code>) with:</p>
+<ul>
+<li>Handler functions for each endpoint</li>
+<li>Product type definition</li>
+<li>Global product storage</li>
+<li>Server initialization and startup</li>
+</ul>
+<h2 id="learning-objectives">
+  Learning Objectives
+  
+  <a class="anchor" href="#learning-objectives">#</a>
+  
+</h2>
+<p>This project helps you understand:</p>
+<ul>
+<li>HTTP server basics in Go</li>
+<li>Request routing and handling</li>
+<li>JSON API development</li>
+<li>CORS configuration</li>
+<li>Error handling patterns</li>
+<li>Go&rsquo;s type system and structs</li>
+</ul>
+<h2 id="next-steps">
+  Next Steps
+  
+  <a class="anchor" href="#next-steps">#</a>
+  
+</h2>
+<p>Continue reading to explore the <a href="../architecture">detailed architecture</a> and <a href="../../api">API documentation</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/project-overview/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Project Overview" />
+        <span>Project Overview</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/api/reference/" class="flex align-center book-icon">
+        <span>API Reference</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="API Reference" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-go-http-server">Introduction to Go HTTP Server</a>
+      <ul>
+        <li><a href="#what-is-this-project">What is this project?</a></li>
+        <li><a href="#key-features">Key Features</a>
+          <ul>
+            <li><a href="#-http-server">🌐 HTTP Server</a></li>
+            <li><a href="#-api-endpoints">📡 API Endpoints</a></li>
+            <li><a href="#-technical-implementation">🔧 Technical Implementation</a></li>
+          </ul>
+        </li>
+        <li><a href="#code-structure">Code Structure</a></li>
+        <li><a href="#learning-objectives">Learning Objectives</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

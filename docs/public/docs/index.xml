@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go HTTP Server Documentation</title>
+    <link>https://example.org/docs/</link>
+    <description>Recent content on Go HTTP Server Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API Reference</title>
+      <link>https://example.org/docs/api/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/docs/api/reference/</guid>
+      <description>&lt;h1 id=&#34;api-reference&#34;&gt;&#xA;  API Reference&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#api-reference&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Complete reference for all available endpoints in the Go HTTP Server.&lt;/p&gt;&#xA;&lt;h2 id=&#34;base-url&#34;&gt;&#xA;  Base URL&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#base-url&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://localhost:3000&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;endpoints&#34;&gt;&#xA;  Endpoints&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#endpoints&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;get-&#34;&gt;&#xA;  GET /&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#get-&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Returns a welcome message from the server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Response Headers:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Content-Type: application/json&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Response:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Welcome to the home page! This is a simple HTTP server in Go.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Example Request:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl http://localhost:3000/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h3 id=&#34;get-products&#34;&gt;&#xA;  GET /products&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#get-products&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Retrieves all available products in JSON format.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Method:&lt;/strong&gt; &lt;code&gt;GET&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Response Headers:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

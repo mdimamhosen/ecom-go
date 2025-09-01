@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  API Reference
+  
+  #
+  
+
+Complete reference for all available endpoints in the Go HTTP Server.
+
+  Base URL
+  
+  #
+  
+
+http://localhost:3000
+
+  Endpoints
+  
+  #
+  
+
+
+  GET /
+  
+  #
+  
+
+Returns a welcome message from the server.
+Response Headers:
+
+Content-Type: application/json
+
+Response:
+Welcome to the home page! This is a simple HTTP server in Go.
+Example Request:
+curl http://localhost:3000/
+
+
+  GET /products
+  
+  #
+  
+
+Retrieves all available products in JSON format.
+Method: GET
+Response Headers:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://example.org/docs/api/reference/">
+  <meta property="og:site_name" content="Go HTTP Server Documentation">
+  <meta property="og:title" content="API Reference">
+  <meta property="og:description" content="API Reference # Complete reference for all available endpoints in the Go HTTP Server.
+Base URL # http://localhost:3000 Endpoints # GET / # Returns a welcome message from the server.
+Response Headers:
+Content-Type: application/json Response:
+Welcome to the home page! This is a simple HTTP server in Go. Example Request:
+curl http://localhost:3000/ GET /products # Retrieves all available products in JSON format.
+Method: GET
+Response Headers:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>API Reference | Go HTTP Server Documentation</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://example.org/docs/api/reference/">
+<link rel="stylesheet" href="/book.min.5c80a20e1f11b0e9dc4cae70ce44083860ffa999a7bf8ab5dab38664fde8a418.css" integrity="sha256-XICiDh8RsOncTK5wzkQIOGD/qZmnv4q12rOGZP3opBg=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.fed636a450f6764ee477c3defae1a5bfa7de4e8659c436605679b401c8fa44b7.js" integrity="sha256-/tY2pFD2dk7kd8Pe&#43;uGlv6feToZZxDZgVnm0Acj6RLc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Go HTTP Server Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/docs/"  target="_blank" rel="noopener">
+        Documentation
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/" class="">Project Overview</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/project-overview/intro/" class="">Introduction</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/api/reference/" class="active">API Reference</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/" class="">Go Classes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/classes/class47/" class="">class47</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>API Reference</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#api-reference">API Reference</a>
+      <ul>
+        <li><a href="#base-url">Base URL</a></li>
+        <li><a href="#endpoints">Endpoints</a>
+          <ul>
+            <li><a href="#get-">GET /</a></li>
+            <li><a href="#get-products">GET /products</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-models">Data Models</a>
+          <ul>
+            <li><a href="#tproduct">TProduct</a></li>
+          </ul>
+        </li>
+        <li><a href="#status-codes">Status Codes</a></li>
+        <li><a href="#cors-support">CORS Support</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="api-reference">
+  API Reference
+  
+  <a class="anchor" href="#api-reference">#</a>
+  
+</h1>
+<p>Complete reference for all available endpoints in the Go HTTP Server.</p>
+<h2 id="base-url">
+  Base URL
+  
+  <a class="anchor" href="#base-url">#</a>
+  
+</h2>
+<pre tabindex="0"><code>http://localhost:3000
+</code></pre><h2 id="endpoints">
+  Endpoints
+  
+  <a class="anchor" href="#endpoints">#</a>
+  
+</h2>
+<h3 id="get-">
+  GET /
+  
+  <a class="anchor" href="#get-">#</a>
+  
+</h3>
+<p>Returns a welcome message from the server.</p>
+<p><strong>Response Headers:</strong></p>
+<ul>
+<li><code>Content-Type: application/json</code></li>
+</ul>
+<p><strong>Response:</strong></p>
+<pre tabindex="0"><code>Welcome to the home page! This is a simple HTTP server in Go.
+</code></pre><p><strong>Example Request:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:3000/
+</span></span></code></pre></div><hr>
+<h3 id="get-products">
+  GET /products
+  
+  <a class="anchor" href="#get-products">#</a>
+  
+</h3>
+<p>Retrieves all available products in JSON format.</p>
+<p><strong>Method:</strong> <code>GET</code></p>
+<p><strong>Response Headers:</strong></p>
+<ul>
+<li><code>Access-Control-Allow-Origin: *</code></li>
+<li><code>Content-Type: application/json</code></li>
+</ul>
+<p><strong>Response Format:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ID&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;TITLE&#34;</span>: <span style="color:#e6db74">&#34;Orange&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;DESCRIPTION&#34;</span>: <span style="color:#e6db74">&#34;Very Sweet fruit&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PRICE&#34;</span>: <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ImgUrl&#34;</span>: <span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1557800636-894a64c1696f?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlfGVufDB8fDB8fHww&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p><strong>Example Request:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:3000/products
+</span></span></code></pre></div><p><strong>Error Responses:</strong></p>
+<p>If a non-GET method is used:</p>
+<ul>
+<li><strong>Status Code:</strong> <code>400 Bad Request</code></li>
+<li><strong>Response:</strong> <code>Please give me get request</code></li>
+</ul>
+<p><strong>Example Error Request:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST http://localhost:3000/products
+</span></span></code></pre></div><h2 id="data-models">
+  Data Models
+  
+  <a class="anchor" href="#data-models">#</a>
+  
+</h2>
+<h3 id="tproduct">
+  TProduct
+  
+  <a class="anchor" href="#tproduct">#</a>
+  
+</h3>
+<p>Represents a product in the system.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ID</code></td>
+          <td><code>int</code></td>
+          <td>Unique product identifier</td>
+      </tr>
+      <tr>
+          <td><code>TITLE</code></td>
+          <td><code>string</code></td>
+          <td>Product name/title</td>
+      </tr>
+      <tr>
+          <td><code>DESCRIPTION</code></td>
+          <td><code>string</code></td>
+          <td>Product description</td>
+      </tr>
+      <tr>
+          <td><code>PRICE</code></td>
+          <td><code>float64</code></td>
+          <td>Product price</td>
+      </tr>
+      <tr>
+          <td><code>ImgUrl</code></td>
+          <td><code>string</code></td>
+          <td>URL to product image</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ID&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;TITLE&#34;</span>: <span style="color:#e6db74">&#34;Orange&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;DESCRIPTION&#34;</span>: <span style="color:#e6db74">&#34;Very Sweet fruit&#34;</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;PRICE&#34;</span>: <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ImgUrl&#34;</span>: <span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1557800636-894a64c1696f?w=500&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlfGVufDB8fDB8fHww&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="status-codes">
+  Status Codes
+  
+  <a class="anchor" href="#status-codes">#</a>
+  
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Code</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>200</code></td>
+          <td>Success - Request completed successfully</td>
+      </tr>
+      <tr>
+          <td><code>400</code></td>
+          <td>Bad Request - Invalid request method</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="cors-support">
+  CORS Support
+  
+  <a class="anchor" href="#cors-support">#</a>
+  
+</h2>
+<p>The API supports Cross-Origin Resource Sharing (CORS) with the following header:</p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: *
+</code></pre><p>This allows the API to be called from any domain, making it suitable for frontend integration.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/project-overview/intro/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Introduction" />
+        <span>Introduction</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/classes/" class="flex align-center book-icon">
+        <span>Go Classes</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Go Classes" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#api-reference">API Reference</a>
+      <ul>
+        <li><a href="#base-url">Base URL</a></li>
+        <li><a href="#endpoints">Endpoints</a>
+          <ul>
+            <li><a href="#get-">GET /</a></li>
+            <li><a href="#get-products">GET /products</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-models">Data Models</a>
+          <ul>
+            <li><a href="#tproduct">TProduct</a></li>
+          </ul>
+        </li>
+        <li><a href="#status-codes">Status Codes</a></li>
+        <li><a href="#cors-support">CORS Support</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

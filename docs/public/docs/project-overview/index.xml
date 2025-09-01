@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project Overview on Go HTTP Server Documentation</title>
+    <link>https://example.org/docs/project-overview/</link>
+    <description>Recent content in Project Overview on Go HTTP Server Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Sep 2025 23:41:41 +0600</lastBuildDate>
+    <atom:link href="https://example.org/docs/project-overview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>https://example.org/docs/project-overview/intro/</link>
+      <pubDate>Mon, 01 Sep 2025 23:41:41 +0600</pubDate>
+      <guid>https://example.org/docs/project-overview/intro/</guid>
+      <description>&lt;h1 id=&#34;introduction-to-go-http-server&#34;&gt;&#xA;  Introduction to Go HTTP Server&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-go-http-server&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-this-project&#34;&gt;&#xA;  What is this project?&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-this-project&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This is a simple HTTP server built in Go that demonstrates fundamental web development concepts. The server provides a RESTful API for managing product data with JSON responses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;&#xA;  Key Features&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#key-features&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-http-server&#34;&gt;&#xA;  🌐 HTTP Server&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-http-server&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Built with Go&amp;rsquo;s standard &lt;code&gt;net/http&lt;/code&gt; package&lt;/li&gt;&#xA;&lt;li&gt;Custom router using &lt;code&gt;http.NewServeMux()&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Runs on port 3000&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-api-endpoints&#34;&gt;&#xA;  📡 API Endpoints&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-api-endpoints&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Home endpoint&lt;/strong&gt; (&lt;code&gt;/&lt;/code&gt;) - Welcome message&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Products endpoint&lt;/strong&gt; (&lt;code&gt;/products&lt;/code&gt;) - Product data in JSON format&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-technical-implementation&#34;&gt;&#xA;  🔧 Technical Implementation&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-technical-implementation&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Type-safe structures&lt;/strong&gt; - Custom &lt;code&gt;TProduct&lt;/code&gt; struct&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JSON encoding&lt;/strong&gt; - Automatic JSON marshaling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Method validation&lt;/strong&gt; - Only GET requests allowed for products&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;CORS headers&lt;/strong&gt; - Cross-origin resource sharing support&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Error handling&lt;/strong&gt; - Proper HTTP status codes&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;code-structure&#34;&gt;&#xA;  Code Structure&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#code-structure&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The entire server is implemented in a single file (&lt;code&gt;class47.go&lt;/code&gt;) with:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
