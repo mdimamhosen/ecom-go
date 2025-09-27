@@ -39,7 +39,6 @@ func Update(product Product) Product {
 	for idx, p := range productList {
 		if p.ID == product.ID {
 			productList[idx] = product
-
 			return product
 		}
 	}
