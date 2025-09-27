@@ -1,7 +1,7 @@
 package rest
 
 import (
-	"ecommerce/rest/handlers"
+	handlers "ecommerce/rest/handlers/product"
 	"ecommerce/rest/handlers/users"
 	middleware "ecommerce/rest/middlewares"
 	"net/http"
