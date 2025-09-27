@@ -25,11 +25,10 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	database.StoreMu.Lock()
-	defer database.StoreMu.Unlock()
+	// database.StoreMu.Lock()
+	// defer database.StoreMu.Unlock()
 
-	newProd.ID = len(database.ProductList) + 1
-	database.ProductList = append(database.ProductList, newProd)
+	products := database.Store(newProd)
 
-	utils.SendJSON(w, http.StatusCreated, newProd)
+	utils.SendJSON(w, http.StatusCreated, products)
 }

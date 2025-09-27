@@ -12,7 +12,8 @@ func GetProducts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	database.StoreMu.RLock()
-	defer database.StoreMu.RUnlock()
-	utils.SendJSON(w, http.StatusOK, database.ProductList)
+	// database.StoreMu.RLock()
+	// defer database.StoreMu.RUnlock()
+	product := database.List()
+	utils.SendJSON(w, http.StatusOK, product)
 }
